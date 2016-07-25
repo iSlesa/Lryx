@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lryx</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="click_me">Which song?</string>
+    <string name="send">Send</string>
+    <string name="tori_dahal">Tori Dahal</string>
+    <string name="lyrics_button">Show lyrics</string>
+</resources>
