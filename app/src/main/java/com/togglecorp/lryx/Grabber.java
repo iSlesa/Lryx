@@ -76,8 +76,6 @@ public class Grabber extends AsyncTask<Void, Void, Void>{
             Log.d("Error msg", "Exception aaaaayoooo!");
             error = "Some error which I have no idea about. Peace.";
         }
-
-
         return null;
     }
 
