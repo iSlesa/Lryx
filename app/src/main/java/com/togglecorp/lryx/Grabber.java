@@ -38,25 +38,25 @@ public class Grabber extends AsyncTask<Void, Void, Void>{
             arg = arg.replaceAll(" ","+");
             Log.d("query", arg);
             String Url = "http://google.com/search?hl=en&q="+arg+"+lyrics&btnI=I\'m+Feeling+Lucky";
-//        Log.d("url", Url);
-//        URL url = null;
-//        try {
-//            url = new URL(Url);
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        }
-//        HttpURLConnection ucon = null;
-//        try {
-//            ucon = (HttpURLConnection) url.openConnection();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            Log.d("Here","vayena ni ta");
-//        }
-//        ucon.setInstanceFollowRedirects(false);
-//        String redirectedUrl = ucon.getHeaderField("Location");
+            Log.d("url", Url);
+            URL url = null;
+            try {
+                url = new URL(Url);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+            HttpURLConnection ucon = null;
+            try {
+                ucon = (HttpURLConnection) url.openConnection();
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.d("Here","vayena ni ta");
+            }
+            ucon.setInstanceFollowRedirects(false);
+            String redirectedUrl = ucon.getHeaderField("Location");
 
             Document page = null;
-            page = Jsoup.connect(Url).userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6").timeout(30000)
+            page = Jsoup.connect(redirectedUrl).userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6").timeout(30000)
                     .referrer("http://www.google.com")
                     .get();
             Log.d("Title: ", page.title());
